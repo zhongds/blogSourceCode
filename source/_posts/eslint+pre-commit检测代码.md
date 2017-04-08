@@ -5,7 +5,7 @@ tags: eslint、pre-commit、npm script
 ---
 　　良好的代码规范有助于项目的维护和新人的快速上手。前段时间，把eslint引入了项目中做静态代码检查。 一下把所有的代码都改造是不可能，要改的地方太多，而且要保证后来提交代码的质量。于是有了eslint + pre-commit 的结合。
 　　pre-commit是git的钩子，顾名思义就是在提交前运行，所以一般用于代码检查、单元测试。git还有其他钩子，比如prepare-commit-msg、pre-push等，具体可查看[git官网](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)。git 钩子目录在.git/hooks下（如下图）：
-![git-hooks.png](http://upload-images.jianshu.io/upload_images/4928078-3e45a2c94dc9fcd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+{% asset_img git-hooks.png git hooks 目录 %}
 　　上图这些文件都是对应钩子的示例脚本，.sample后缀都是出于未启动状态。对应的钩子要生效，把.sample去掉。示例都是用shell脚本写的。那如果想用js写怎么办呢？需要借助[pre-commit库](https://github.com/observing/pre-commit)：
 1. 安装pre-commit
 ```
